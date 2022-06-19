@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+    font-family:'Courier New', Courier, monospace;
+}
+
+header{
+    padding-left: 20px;
+    background-color: darkolivegreen;
+    color: darkgreen;
+}
+
+header h1{
+    display: inline;
+    font-size: 40px;
+}
+
+header .top-bar{
+    display: inline-block;
+    font-size: 17px;
+}
+
+header .top-bar ul{
+    list-style-type: none;
+}
+header .top-bar ul li{
+    display:inline;
+    color: darkolivegreen;
+    background-color: darkgreen;
+    
+}
