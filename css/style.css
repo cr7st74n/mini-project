@@ -12,13 +12,14 @@ header{
 }
 
 header h1{
-    display: inline;
+    display:inline;
     font-size: 40px;
 }
  
 header .top-bar{
     /* padding: 20px; */
     display: inline-block;
+    text-align: right;
     font-size: 17px;
 }
 
@@ -29,5 +30,8 @@ header .top-bar ul li{
     display:inline;
     color: darkolivegreen;
     background-color: darkgreen;
-    
+}
+
+main{
+    background-color: coral;
 }
