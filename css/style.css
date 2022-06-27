@@ -15,8 +15,9 @@ header h1{
     display: inline;
     font-size: 40px;
 }
-
+ 
 header .top-bar{
+    /* padding: 20px; */
     display: inline-block;
     font-size: 17px;
 }
