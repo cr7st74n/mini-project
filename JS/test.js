@@ -33,31 +33,63 @@ var ListQuestions = ["lowercase","uppercase","numeric","special character"];
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-
 const alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const randomCharacterUpper = alphabetUpper[Math.floor(Math.random() * alphabetUpper.length)];
 
 const ramdonNumber = Math.floor(Math.random()* 100)+1;
 
 const SpecialChar = " |=>!$%&/(@#^*-+<;:.,]}{)]~'? ";
-const randomCharacterSpe = SpecialChar[Math.floor(Math.random()* SpecialChar.length)];
 
+const allRandom = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ|=>!$%&/(@#^*-+<;:.,]}{)]~'?"
 
-while(RamPassword.length < numOfChar/4){
-  const randomCharacter = alphabet[Math.floor(Math.random() * alphabet.length)];
-  RamPassword+=randomCharacter;
+// console.log(RamPassword);
+function chooseCharacter(count){
+    if(count == "0"){
+        const randomCharacter = alphabet[Math.floor(Math.random() * alphabet.length)];
+        RamPassword+=randomCharacter;
+        console.log(RamPassword);
+    }else if(count == "1"){
+        const randomCharacterUpper = alphabetUpper[Math.floor(Math.random() * alphabetUpper.length)];
+        RamPassword+=randomCharacterUpper;
+        console.log(RamPassword);
+    }else if(count == "2"){
+        const ramdonNumber = Math.floor(Math.random()* 10)+1;
+        RamPassword+=ramdonNumber;
+        console.log(RamPassword);
+    }else if(count == "3"){
+        const randomCharacterSpe = SpecialChar[Math.floor(Math.random()* SpecialChar.length)];
+        RamPassword+=randomCharacterSpe;
+        console.log(RamPassword);
+   }
+   console.log(count);
+   
+  return RamPassword;
 }
-console.log(RamPassword);
-
-// function chooseCharacter(numType){
-// }
 
 function CharacterType(){
   for(var i=0; i < ListQuestions.length; i++){
-    var cont = 0;
     var position = ListQuestions[i];
-    var question = prompt("Do you want yo include" +position);
-    question = ValCharacter(question);
-    // if(question )
+    var question = prompt("Do you want yo include " +position +" YES/NO ?" );
+    var response = question.toUpperCase();
+    console.log(response);
+  while(response != "YES" && response != "NO"){
+    response = prompt("Write yes/no response only");
+    response = response.toUpperCase();
+    console.log(response);
   }
+  if (response === "YES"){
+    alert("ADD");
+    chooseCharacter(i);
+  }
+  else{
+    alert("The password would be generated automatically!")
+    while(RamPassword.length <= numOfChar){
+      const randomALL= allRandom[Math.floor(Math.random()* allRandom.length)];
+      RamPassword+=randomALL;
+    }
+  }
+  }
+  return RamPassword;
 }
+
+var valor = CharacterType();
+console.log(valor);
